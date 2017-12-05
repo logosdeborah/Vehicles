@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.jeongeun.mvvm"
+        minSdkVersion 24
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    final ARCH_VERSION = '1.0.0'
+    final SUPPORT_LIBRARY_VERSION = '27.0.0'
+    final RXJAVA_VERSION = '2.3.0'
+    final BUTTERKNIFE_VERSION = '8.8.1'
+    final GSON_CONVERTER_VERSION = '2.1.0'
+    final CONSTRAINT_LAYOUT_VERSION = '1.0.2'
+    final AUTO_VALUE_VERSION = '1.5'
+    final AUTO_VALUE_GSON_VERSION = '0.4.5'
+    final AUTO_VALUE_PARCEL_VERSION = '0.2.5'
+    final TIMBER_VERSION = '4.5.0'
+    final MAPS_VERSION = '11.0.4'
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:design:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:cardview-v7:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support.constraint:constraint-layout:$CONSTRAINT_LAYOUT_VERSION"
+    implementation "com.android.support:recyclerview-v7:$SUPPORT_LIBRARY_VERSION"
+    implementation "com.android.support:support-fragment:$SUPPORT_LIBRARY_VERSION"
+
+    // Retrofit2
+    implementation "com.squareup.retrofit2:converter-gson:$GSON_CONVERTER_VERSION"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$RXJAVA_VERSION"
+
+    // butter knife
+    implementation "com.jakewharton:butterknife:$BUTTERKNIFE_VERSION"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$BUTTERKNIFE_VERSION"
+
+    // Auto value
+    provided "com.google.auto.value:auto-value:$AUTO_VALUE_VERSION"
+    annotationProcessor "com.google.auto.value:auto-value:$AUTO_VALUE_VERSION"
+    provided "com.ryanharter.auto.value:auto-value-gson:$AUTO_VALUE_GSON_VERSION"
+    annotationProcessor "com.ryanharter.auto.value:auto-value-gson:$AUTO_VALUE_GSON_VERSION"
+    annotationProcessor "com.ryanharter.auto.value:auto-value-parcel:$AUTO_VALUE_PARCEL_VERSION"
+
+    // architecture
+    implementation "android.arch.lifecycle:extensions:$ARCH_VERSION"
+
+    // maps
+    implementation "com.google.android.gms:play-services-maps:$MAPS_VERSION"
+
+    // log
+    implementation "com.jakewharton.timber:timber:$TIMBER_VERSION"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+}

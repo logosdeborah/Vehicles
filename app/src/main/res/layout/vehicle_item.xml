@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="6dp"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
+    android:layout_marginTop="6dp"
+    card_view:cardCornerRadius="2dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <!-- Left side -->
+
+        android:text="@string/name"
+        <TextView
+            android:id="@+id/name"
+            android:text="@string/name"
+            style="@style/CustomTitleTextView" />
+
+        <TextView
+            android:id="@+id/engine"
+            style="@style/CustomTitleTextView"
+            android:text="@string/engine"
+            app:layout_constraintTop_toTopOf="@+id/text_engine" />
+
+        <TextView
+            android:id="@+id/fuel"
+            style="@style/CustomTitleTextView"
+            android:text="@string/fuel"
+            app:layout_constraintTop_toTopOf="@+id/text_fuel" />
+
+        <TextView
+            android:id="@+id/exterior"
+            style="@style/CustomTitleTextView"
+            android:text="@string/exterior"
+            app:layout_constraintTop_toTopOf="@+id/text_exterior" />
+
+        <TextView
+            android:id="@+id/interior"
+            style="@style/CustomTitleTextView"
+            android:text="@string/interior"
+            app:layout_constraintTop_toTopOf="@+id/text_interior" />
+
+        <TextView
+            android:id="@+id/address"
+            style="@style/CustomTitleTextView"
+            android:text="@string/address"
+            app:layout_constraintTop_toTopOf="@+id/text_address" />
+
+        <!-- Right side -->
+        <TextView
+            android:id="@+id/text_name"
+            style="@style/CustomContentTextView"
+            card_view:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/text_engine"
+            style="@style/CustomContentTextView"
+            app:layout_constraintTop_toBottomOf="@id/text_name" />
+
+        <TextView
+            android:id="@+id/text_fuel"
+            style="@style/CustomContentTextView"
+            app:layout_constraintTop_toBottomOf="@+id/text_engine" />
+
+        <TextView
+            android:id="@+id/text_exterior"
+            style="@style/CustomContentTextView"
+            app:layout_constraintTop_toBottomOf="@+id/text_fuel" />
+
+        <TextView
+            android:id="@+id/text_interior"
+            style="@style/CustomContentTextView"
+            app:layout_constraintTop_toBottomOf="@+id/text_exterior" />
+
+        <TextView
+            android:id="@+id/text_address"
+            style="@style/CustomContentTextView"
+            android:layout_width="0dp"
+            android:lines="2"
+            card_view:layout_constraintDimensionRatio="7:1"
+            app:layout_constraintTop_toBottomOf="@id/text_interior" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/vertGuideLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/vertGuideRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.22" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>
